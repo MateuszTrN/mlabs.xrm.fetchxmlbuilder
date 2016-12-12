@@ -1,4 +1,7 @@
 # mlabs.xrm.fetchxmlbuilder
+
+Lightweight JS builder for Microsoft CRM FetchXmls for Subgrids or WebService Queries.
+
 ## 1. Installation 
  - Add mlabs.xrm.fetchxmlbuilder.js to the form: 
   ![Instalaltion](http://i.imgur.com/yHGdfCA.png)
@@ -43,7 +46,7 @@ query.addFilter(
     close all opened tags from the stack
 --- 
 
-### mlabs.xrm.queryBuilder - builds the "fetch" node.
+### mlabs.xrm.fetchXmlBuilder - builds the "fetch" node.
 
 ##### function setCount([number]count) : queryBuilder 
     sets 'count' attribute
