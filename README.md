@@ -54,8 +54,11 @@ var query = new mlabs.xrm.queryBuilder();
    
 ```
   4) conditionBuilder - injected in .addCondition function
+  
     - attribute([string]name): operatorBuilder - sets filtered attribute name and returns condition operator setter
+    
   5) operatorBuilder - returned by 'attribute' function from conditionBuilder. Available operators: 
+  
     - equals
     - isNotEqual
     - isLessThan
