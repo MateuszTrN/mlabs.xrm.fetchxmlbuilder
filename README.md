@@ -1,4 +1,4 @@
-# xrm.fetchxmlbuilder
+# mlabs.xrm.fetchxmlbuilder
 1. Installation 
  - Add mlabs.xrm.fetchxmlbuilder.js to the form: 
   ![Instalaltion](http://i.imgur.com/yHGdfCA.png)
@@ -11,16 +11,17 @@
 ```
 //Imagine you're on some entity that has relation with account, but doesn't have direct relation with contacts.
 var query = new mlabs.xrm.queryBuilder();
-        query.setEntityName("contact");
-        query.addFilter(function (filter) {
-            filter.type("and")
-              .addCondition(function (where) { 
-                where.attribute('statuscode').equals(0); /* active */ 
-              })
-              .addCondition(function (where) {
-                where.attribute("parentaccountid").equals(Xrm.Page.getAttribute("new_relatedaccount")[0].id);
-              });
-        });
+query.setEntityName("contact");
+query.addFilter(
+  function (filter) {
+    filter.type("and")
+     .addCondition(function (where) { 
+        where.attribute('statuscode').equals(0); /* active */ 
+     })
+     .addCondition(function (where) {
+       where.attribute("parentaccountid").equals(Xrm.Page.getAttribute("new_relatedaccount")[0].id);
+     });
+ });
         
  var gridControl = GetGridControl(); 
  gridControl.SetParameter("fetchXml", query.getFetchXml());        
@@ -54,8 +55,11 @@ var query = new mlabs.xrm.queryBuilder();
    
 ```
   4) conditionBuilder - injected in .addCondition function
+  
     - attribute([string]name): operatorBuilder - sets filtered attribute name and returns condition operator setter
+    
   5) operatorBuilder - returned by 'attribute' function from conditionBuilder. Available operators: 
+  
     - equals
     - isNotEqual
     - isLessThan
