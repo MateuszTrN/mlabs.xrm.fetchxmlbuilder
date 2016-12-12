@@ -1,8 +1,8 @@
 {
-  "name": "xrm.fetchxmlbuilder",
+  "name": "mlabs.xrm.fetchxmlbuilder",
   "version": "0.0.1",
   "description": "Ligthweight JS library to build Microsoft Dynamics CRM FetchXML strings",
-  "main": "xrm.fetchxmlbuilder.js",
+  "main": "mlabs.xrm.fetchxmlbuilder.js",
   "scripts": {
     "test": "mocha \"**/*.spec.js\""
   },
