@@ -4,7 +4,7 @@ xmlFormat = function (xml) {
     return formattor(xml, { method: 'xml' });
 }
 
-var mlabs = require("./xrm.fetchxmlbuilder");
+var mlabs = require("./mlabs.xrm.fetchxmlbuilder");
 
 describe("My very first javascript unit test ever ", function () {
     it("The very first test should just work", function () {

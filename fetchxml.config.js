@@ -15,8 +15,8 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'xrm.fetchxmlbuilder.js',
-      'xrm.fetchxmlbuilder.spec.js',
+      'mlabs.xrm.fetchxmlbuilder.js',
+      'mlabs.xrm.fetchxmlbuilder.spec.js',
       {pattern: '**/*.spec.js', included: false}
     ],
 
