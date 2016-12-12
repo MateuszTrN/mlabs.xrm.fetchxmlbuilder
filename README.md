@@ -1,4 +1,4 @@
-# xrm.fetchxmlbuilder
+# mlabs.xrm.fetchxmlbuilder
 1. Installation 
  - Add mlabs.xrm.fetchxmlbuilder.js to the form: 
   ![Instalaltion](http://i.imgur.com/yHGdfCA.png)
