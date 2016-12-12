@@ -227,7 +227,7 @@ mlabs.xrm.entityBuilder = function (rootElementName, rootElementAttributesNameAr
 
 }
 
-mlabs.xrm.queryBuilder = function () {
+mlabs.xrm.fetchXmlBuilder = function () {
     var _count;
     var _top = -1;
     var _distinct = true;

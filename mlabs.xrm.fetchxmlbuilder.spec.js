@@ -25,7 +25,7 @@ describe("Xml Builder", function () {
 describe("Query Builder", function () {
     it("doesn't throw an exception on complete usage example", function () {
         try {
-            var query = new mlabs.xrm.queryBuilder();
+            var query = new mlabs.xrm.fetchXmlBuilder();
 
             query.setEntityName("account")
                 .addFilter(function (filter) {
@@ -47,8 +47,8 @@ describe("Query Builder", function () {
                                 });
                         });
                 })
-                .addEntityLink(function (queryBuilder) {
-                    queryBuilder
+                .addEntityLink(function (fetchXmlBuilder) {
+                    fetchXmlBuilder
                         .setEntityName("contact")
                         .setFrom("contactid")
                         .setTo("parentaccountid")
@@ -72,7 +72,7 @@ describe("Query Builder", function () {
     });
 
     it("sets entity name correctly", function () {
-        var query = new mlabs.xrm.queryBuilder();
+        var query = new mlabs.xrm.fetchXmlBuilder();
         query.setEntityName("account");
         var xml = xmlFormat(query.getFetchXml());
 
@@ -81,7 +81,7 @@ describe("Query Builder", function () {
     });
 
     it("should remove all-attributes element when addAttribute method is called", function () {
-        var query = new mlabs.xrm.queryBuilder();
+        var query = new mlabs.xrm.fetchXmlBuilder();
         query.setEntityName("account");
         query.addAttribute("Name");
         var xml = xmlFormat(query.getFetchXml());
@@ -91,7 +91,7 @@ describe("Query Builder", function () {
     });
 
     it("should add filter element when addFilter method is called", function () {
-        var query = new mlabs.xrm.queryBuilder();
+        var query = new mlabs.xrm.fetchXmlBuilder();
         query.setEntityName("account");
         query.addFilter(function (filter) {
             filter.type("or").addCondition(function (where) {
@@ -106,7 +106,7 @@ describe("Query Builder", function () {
     });
 
     it("should add correct condition with single value", function () {
-        var query = new mlabs.xrm.queryBuilder();
+        var query = new mlabs.xrm.fetchXmlBuilder();
         query.setEntityName("account");
         query.addFilter(function (filter) {
             filter.addCondition(function (where) {
@@ -121,7 +121,7 @@ describe("Query Builder", function () {
     });
 
     it("should add correct condition with multiple values", function () {
-        var query = new mlabs.xrm.queryBuilder();
+        var query = new mlabs.xrm.fetchXmlBuilder();
         query.setEntityName("account");
         query.addFilter(function (filter) {
             filter.addCondition(function (where) {
