@@ -1,6 +1,6 @@
 # mlabs.xrm.fetchxmlbuilder
 
-Lightweight JS builder for Microsoft CRM FetchXmls for Subgrids or WebService Queries.
+Lightweight JS builder for Microsoft CRM FetchXmls. Useful to create dynamic Subgrids filtering or WebService Queries.
 
 ## 1. Installation 
  - Add mlabs.xrm.fetchxmlbuilder.js to the form: 
