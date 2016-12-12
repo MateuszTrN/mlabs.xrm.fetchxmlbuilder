@@ -29,13 +29,15 @@ var query = new mlabs.xrm.queryBuilder();
 4. API
 
  1) mlabs.xrm.xmlStringBuilder - builder for XMLs 
+ ```
     - function getXmlString() : string - returns built FetchXML
     - function openTag([string]tagName, [object]attributes) : xmlStringBuilder - adds new opening tag
     - function closeTag() : xmlStringBuilder - close first tag from the stack
     - function insertString([string]text) : xmlStringBuilder - inserts string (xml)
     - function closeAllTags() : xmlStringBuilder - close all opened tags from the stack
-    
+ ```
  2) mlabs.xrm.queryBuilder - builds the "fetch" node.
+ ```
     - function setCount([number]count) : queryBuilder  - sets 'count' attribute
     - function setTop([number]count) : queryBuilder - sets 'top' attribute
     - function getFetchXml() : string - gets complete fetchXml
@@ -43,11 +45,14 @@ var query = new mlabs.xrm.queryBuilder();
     - function setEntityName([string]entityName) : queryBuilder - sets 'name' attribute in 'entity' node.
     - function addAttribute([string]name) : queryBuilder - adds attribute node. Called for the first time marks '&lt;all-attributes /&gt;' as not needed
     - function addEntityLink([function: mlabs.xrm.entityBuilder -> mlabs.xrm.queryBuilder]entityBuilder) : queryBuilder - builds entityLink node.
+```
   3) filterBuilder - injected in .addFilter function
+```
     - function type([string]type) : filterBuilder - accepts values "or" / "and". defines filter type (filter 'type' attribute). 
     - addCondition([function: conditionBuilder -> undefined]conditionFunction) : filterBuilder - adds condition node. injected argument is a condition builder
     - function addFilter([function: filterBuilder -> undefined]filteringFunction) : filterBuilder - adds nested filter node 
-    
+   
+```
   4) conditionBuilder - injected in .addCondition function
     - attribute([string]name): operatorBuilder - sets filtered attribute name and returns condition operator setter
   5) operatorBuilder - returned by 'attribute' function from conditionBuilder. Available operators: 
